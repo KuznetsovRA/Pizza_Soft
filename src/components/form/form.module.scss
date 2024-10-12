@@ -1,0 +1,61 @@
+$primary-color: #2c3e50;
+$secondary-color: #34495e;
+$background-color: #1abc9c;
+$text-color: #ecf0f1;
+$border-radius: 8px;
+
+.employeeForm {
+  position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	max-width: 500px;
+  margin: auto;
+  padding: 0 20px 20px 20px;
+  background-color: $primary-color;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+
+
+  .head {
+    text-align: center;
+    font-size: 24px;
+    color: $text-color;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input,
+    select {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid $secondary-color;
+      border-radius: $border-radius;
+      background-color: rgb(52, 73, 94);
+      color: $text-color;
+
+      transition: border 0.3s;
+
+      &:focus {
+        outline: none;
+        border-color: #16a085;
+      }
+
+      .archive {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+        color: $text-color;
+        input[type="checkbox"] {
+          margin: 0 10px 0 0;
+        }
+      }
+    }
+  }
+}

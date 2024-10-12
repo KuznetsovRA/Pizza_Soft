@@ -1,0 +1,42 @@
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
+	$k: calc(($f-max - $f-min) / ($v-max - $v-min));
+	$b: $f-min - $k * $v-min;
+
+	$b: $b * 1px;
+
+	@return calc( #{$k} * 100vw + #{$b} );
+}
+
+button {
+	border-radius: 5px;
+	padding: 5px 10px;
+	text-decoration: none;
+	white-space: nowrap;
+	font-size: calcFluidFontSize(10, 16, 480, 1920);
+}
+
+.deleteButton {
+	background-color: #e74c3c;
+	border: none;
+	color: white;
+	cursor: pointer;
+
+	&:hover {
+		background-color: darkred;
+	}
+}
+
+.addButton {
+	display: inline-block;
+	background-color: #2ecc71;
+	border: none;
+	padding: 10px 10px;
+	& a {
+		color: white;
+		text-decoration: none;
+	}
+
+	&:hover {
+		background-color: #27ae60;
+	}
+}

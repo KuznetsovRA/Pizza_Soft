@@ -1,0 +1,33 @@
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
+  $k: calc(($f-max - $f-min) / ($v-max - $v-min));
+  $b: $f-min - $k * $v-min;
+
+  $b: $b * 1px;
+
+  @return calc(#{$k} * 100vw + #{$b});
+}
+
+.selectContainer {
+	width: 100%;
+
+}
+
+.select {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: #f5f5f5;
+  font-size: calcFluidFontSize(12, 15, 480, 1920);
+  width: 100%;
+  min-width: 164px;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px #2ecc71;
+  }
+}
